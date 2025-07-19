@@ -1,0 +1,39 @@
+<ion-card *ngIf="experiencias.length > 0">
+  <ion-card-header>
+    <ion-card-title>Experiencia Laboral</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let exp of experiencias">
+        <ion-label>
+          <h2>
+            {{ exp.empresa || 'Sin empresa' }}
+            <span *ngIf="exp.cargo">({{ exp.cargo }})</span>
+          </h2>
+          <p>
+            {{ exp.ano_inicio || '-' }} -
+            {{ exp.actualmente ? 'Actualmente' : (exp.ano_termino || '-') }}
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
+
+
+<ion-card *ngIf="certificaciones.length > 0">
+  <ion-card-header>
+    <ion-card-title>Certificaciones</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list>
+      <ion-item *ngFor="let cert of certificaciones">
+        <ion-label>
+          <h2>{{ cert.nombre }}</h2>
+          <p>Obtenida: {{ cert.fecha_obtencion }}</p>
+          <p *ngIf="cert.tiene_vencimiento">Vence: {{ cert.fecha_vencimiento }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>

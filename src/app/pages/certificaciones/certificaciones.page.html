@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Certificaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="certForm">
+    <ion-item>
+      <ion-label position="stacked">Nombre del Certificado</ion-label>
+      <ion-input formControlName="nombre"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Fecha de Obtención</ion-label>
+      <ion-datetime formControlName="fechaObtencion" display-format="YYYY-MM-DD"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>¿Tiene Vencimiento?</ion-label>
+      <ion-checkbox slot="start" formControlName="tieneVencimiento"></ion-checkbox>
+    </ion-item>
+
+    <ion-item *ngIf="mostrarVencimiento">
+      <ion-label position="stacked">Fecha de Vencimiento</ion-label>
+      <ion-datetime formControlName="fechaVencimiento" display-format="YYYY-MM-DD"></ion-datetime>
+    </ion-item>
+  </form>
+
+  <ion-button expand="block" (click)="guardar()">Guardar</ion-button>
+  <ion-button expand="block" color="medium" (click)="limpiar()">Limpiar</ion-button>
+</ion-content>

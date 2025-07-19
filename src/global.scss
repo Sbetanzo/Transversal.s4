@@ -1,0 +1,113 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "@ionic/angular/css/normalize.css";
+@import "@ionic/angular/css/structure.css";
+@import "@ionic/angular/css/typography.css";
+@import "@ionic/angular/css/display.css";
+
+/* Optional CSS utils that can be commented out */
+@import "@ionic/angular/css/padding.css";
+@import "@ionic/angular/css/float-elements.css";
+@import "@ionic/angular/css/text-alignment.css";
+@import "@ionic/angular/css/text-transformation.css";
+@import "@ionic/angular/css/flex-utils.css";
+
+/**
+ * Ionic Dark Mode
+ * -----------------------------------------------------
+ * For more info, please see:
+ * https://ionicframework.com/docs/theming/dark-mode
+ */
+
+//  @import "@ionic/angular/css/palettes/dark.always.css";
+// @import "@ionic/angular/css/palettes/dark.class.css";
+// @import '@ionic/angular/css/palettes/dark.class.css';
+body.dark {
+  --ion-background-color: #121212;
+  --ion-text-color: #ffffff;
+}
+
+/* Modo oscuro */
+body.dark {
+  ion-label,
+  h2,
+  p {
+    color: white !important;
+  }
+
+  ion-badge {
+    --color: white !important;
+    --background: var(--ion-color-primary, #3880ff);
+  }
+}
+
+ion-card {
+  --background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin: 16px;
+  transition: transform 0.2s ease-in-out;
+}
+
+ion-card:hover {
+  transform: scale(1.01);
+}
+
+ion-card-title {
+  font-size: 1.2rem;
+  color: #0077b5; /* LinkedIn blue */
+  margin-bottom: 8px;
+}
+
+ion-label h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+ion-label p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+}
+
+ion-button[color="danger"] {
+  margin-left: auto;
+  --color: white;
+  --background: #e03131;
+  --background-hover: #c92a2a;
+  --box-shadow: none;
+  font-size: 1.2rem;
+}
+
+ion-segment {
+  margin: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+ion-segment-button {
+  --color-checked: #ffffff;
+  --background-checked: #0077b5;
+  font-weight: 600;
+}
+
+ion-icon[name="close-circle"] {
+  font-size: 1.4rem;
+  color: #e03131;
+}
+

@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="perfilForm">
+    <div [ngClass]="{ animar: animando }">
+
+      <div class="foto-perfil" *ngIf="fotoBase64">
+        <img [src]="fotoBase64" alt="Foto de perfil" />
+      </div>
+      <ion-button expand="block" (click)="tomarFoto()">Tomar Foto de Perfil</ion-button>
+
+      <ion-item>
+        <ion-label position="stacked">Nombre</ion-label>
+        <ion-input formControlName="nombre"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Carrera</ion-label>
+        <ion-input formControlName="carrera"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Email</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Fecha de Nacimiento</ion-label>
+        <ion-datetime
+          display-format="DD/MM/YYYY"
+          presentation="date"
+          formControlName="fechaNacimiento">
+        </ion-datetime>
+      </ion-item>
+    </div>
+
+    <ion-button expand="block" color="primary" (click)="guardar()">Guardar</ion-button>
+    <ion-button expand="block" color="medium" (click)="limpiar()">Limpiar</ion-button>
+  </form>
+</ion-content>

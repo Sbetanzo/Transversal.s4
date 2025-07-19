@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Experiencia Laboral</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="experienciaForm">
+    <ion-item>
+      <ion-label position="stacked">Empresa</ion-label>
+      <ion-input formControlName="empresa"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Año de inicio</ion-label>
+      <ion-input type="number" formControlName="anoInicio"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>¿Actualmente trabaja ahí?</ion-label>
+      <ion-checkbox slot="start" formControlName="actualmente"></ion-checkbox>
+    </ion-item>
+
+    <ion-item *ngIf="mostrarAnoTermino">
+      <ion-label position="stacked">Año de término</ion-label>
+      <ion-input type="number" formControlName="anoTermino"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Cargo</ion-label>
+      <ion-input formControlName="cargo"></ion-input>
+    </ion-item>
+  </form>
+
+  <ion-button expand="block" (click)="guardar()">Guardar</ion-button>
+  <ion-button expand="block" color="medium" (click)="limpiar()">Limpiar</ion-button>
+</ion-content>

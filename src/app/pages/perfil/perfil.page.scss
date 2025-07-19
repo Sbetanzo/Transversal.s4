@@ -1,0 +1,25 @@
+.animar {
+  animation: mover 0.6s ease-in-out;
+}
+
+.mat-datepicker-wrapper {
+  margin: 16px;
+  display: block;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+
+
+@keyframes mover {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

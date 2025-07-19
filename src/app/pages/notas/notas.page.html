@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Notas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h3>Notas por Asignatura</h3>
+  <ion-list>
+    <ion-item *ngFor="let asignatura of asignaturas">
+      <ion-label>
+        <h2>{{ asignatura.nombre }}</h2>
+        <p>
+          Nota 1: <strong>{{ asignatura.nota1 }}</strong><br />
+          Nota 2: <strong>{{ asignatura.nota2 }}</strong><br />
+          Nota Necesaria para aprobar:
+          {{ asignatura.nota3 }}
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <h2 class="ion-margin-top">Promedio por asignatura</h2>
+
+  <ion-list>
+    <ion-item *ngFor="let asignatura of asignaturas">
+      <ion-label>
+        <h2>{{ asignatura.nombre }}</h2>
+        <p>Nota: {{ asignatura.nota }}</p>
+      </ion-label>
+      <ion-badge color="primary">{{ asignatura.nota }}</ion-badge>
+    </ion-item>
+  </ion-list>
+
+  <ion-item lines="full">
+    <ion-label><strong>Promedio General</strong></ion-label>
+    <ion-badge color="success">{{ promedio }}</ion-badge>
+  </ion-item>
+</ion-content>
